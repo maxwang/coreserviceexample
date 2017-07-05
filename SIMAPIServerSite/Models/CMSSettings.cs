@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace SIMAPIServerSite.Models
+{
+    [Table("CMSSettings")]
+    public class CmsSettings
+    {
+        [Column("ID")]
+        [Key]
+        public int Id { get; set; }
+
+        public int Company { get; set; }
+        public string BaseNumber { get; set; }
+        public string Defaultip1 { get; set; }
+        public string Defaultip2 { get; set; }
+        public string DialNumber1 { get; set; }
+        public string DialNumber2 { get; set; }
+        public int PortNumber1 { get; set; }
+        public int PortNumber2 { get; set; }
+
+        [Column("SMSNumber1")]
+        public string SmsNumber1 { get; set; }
+
+        [Column("SMSNumber2")]
+        public string SmsNumber2 { get; set; }
+
+        public string EthernetAddress { get; set; }
+        public string GatewayAddress { get; set; }
+        public string InternetAddress1 { get; set; }
+        public string InternetAddress2 { get; set; }
+    }
+}
