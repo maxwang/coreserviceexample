@@ -12,6 +12,7 @@ using SIMAPIServerSite.Data;
 using SIMAPIServerSite.Extensions;
 using SIMAPIServerSite.Repository;
 using SIMAPIServerSite.Services;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace SIMAPIServerSite
 {
@@ -48,6 +49,21 @@ namespace SIMAPIServerSite
             {
                 options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
             });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "SIM Activation API",
+                    Description = "SIM Activation API, Get SIM configurations",
+                    TermsOfService = "None",
+                    Contact = new Contact{ Name = "1080 Agile", Email = "support@1080agile.com", Url = "http://www.1080agile.com"},
+                    License = new License { Name = "1080 Agile", Url = "http://www.1080agile.com" }
+                });
+            });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,6 +84,13 @@ namespace SIMAPIServerSite
             app.UseMiddleware<AdminWhiteListMiddleware>(Configuration["AdminWhiteList"]);
 
             app.UseMvc();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "SIM Activation API V1");
+            });
         }
     }
 }
