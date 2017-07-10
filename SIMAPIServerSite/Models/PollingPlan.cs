@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SIMAPIServerSite.Models
 {
+    [Table("PollingPlan")]
     public class PollingPlan
     {
         [Column("ID")]

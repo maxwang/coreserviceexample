@@ -38,7 +38,7 @@ namespace SIMAPIServerSite
 
             services.AddSingleton<IConfiguration>(Configuration);
 
-            services.AddSingleton<ISimConfigurationRepository, SimConfigurationMemoryRepository>();
+            services.AddSingleton<ISimConfigurationRepository, SimConfigurationDbRepository>();
 
             //if logic is complex, we could use this 
             //services.AddScoped<ClientIdCheckFilter>();

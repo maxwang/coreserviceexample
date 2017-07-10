@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SIMAPIServerSite.Models
 {
+    [Table("Feature")]
     public class Feature
     {
         [Column("ID")]

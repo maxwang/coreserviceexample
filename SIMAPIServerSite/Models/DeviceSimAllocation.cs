@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace SIMAPIServerSite.Models
 {
+    [Table("DeviceSimAllocation")]
     public class DeviceSimAllocation
     {
         [Column("ID")]
         [Key]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public int DeviceAllocation { get; set; }
         public int Provider { get; set; }

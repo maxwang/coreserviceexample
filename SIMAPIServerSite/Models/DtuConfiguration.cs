@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SIMAPIServerSite.Models
 {
+    
     public class DtuConfiguration
     {
         public string Sim1 { get; set; }

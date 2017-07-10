@@ -25,6 +25,7 @@ namespace SIMAPIServerSite.Repository
                 join r in _db.Requests on ds.Id equals  r.DeviceAllocation
                 join p in _db.PollingPlan on r.PollingPlan equals p.Id
                 where dss.SimNumber.Equals(simNumber)
+                orderby dss.Id descending 
                 select new DtuConfiguration
                 {
                     Sim1 = simNumber,
@@ -77,6 +78,10 @@ namespace SIMAPIServerSite.Repository
             if (sim2 != null)
             {
                 result.Sim2 = sim2;
+            }
+            else
+            {
+                result.Sim2 = string.Empty;
             }
             
             return result;

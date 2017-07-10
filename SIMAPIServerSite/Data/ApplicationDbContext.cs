@@ -7,6 +7,7 @@ namespace SIMAPIServerSite.Data
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
+
         }
 
         public DbSet<CmsSettings> CmsSettings { get; set; }
@@ -20,5 +21,6 @@ namespace SIMAPIServerSite.Data
         public DbSet<Request> Requests { get; set; }
         public DbSet<FeatureValueType> FeatureValueTypes { get; set; }
         public DbSet<Feature> Features { get; set; }
+        
     }
 }

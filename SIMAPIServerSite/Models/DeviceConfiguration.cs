@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SIMAPIServerSite.Models
 {
+    [Table("DeviceConfiguration")]
     public class DeviceConfiguration
     {
         [Column("ID")]
