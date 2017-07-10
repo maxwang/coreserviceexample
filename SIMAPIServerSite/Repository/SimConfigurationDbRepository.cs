@@ -32,18 +32,18 @@ namespace SIMAPIServerSite.Repository
                     Account = c.AccountNumber,
                     Base = cs.BaseNumber,
                     DeviceAllocation = dss.DeviceAllocation,
-                    Dial1 = cs.DialNumber1,
-                    Dial2 = cs.DialNumber2,
-                    Ethernet = cs.EthernetAddress,
-                    Gateway = cs.GatewayAddress,
+                    Dial1 = (string.IsNullOrEmpty(cs.DialNumber1)? "" : cs.DialNumber1),
+                    Dial2 = (string.IsNullOrEmpty(cs.DialNumber2) ? "" : cs.DialNumber2),
+                    Ethernet = (string.IsNullOrEmpty(cs.EthernetAddress) ? "0.0.0.0" : cs.EthernetAddress),
+                    Gateway = (string.IsNullOrEmpty(cs.GatewayAddress) ? "0.0.0.0" : cs.GatewayAddress),
                     Ip1 = cs.Defaultip1,
                     Ip2 = cs.Defaultip2,
-                    Internet1 = cs.InternetAddress1,
-                    Internet2 = cs.InternetAddress2,
+                    Internet1 = (string.IsNullOrEmpty(cs.InternetAddress1) ? "" : cs.InternetAddress1),
+                    Internet2 = (string.IsNullOrEmpty(cs.InternetAddress2) ? "" : cs.InternetAddress2),
                     Poll = p.Frequency,
                     Request = r.Id,
-                    Sms1 = cs.SmsNumber1,
-                    Sms2 = cs.SmsNumber2                    
+                    Sms1 = (string.IsNullOrEmpty(cs.SmsNumber1) ? "" : cs.SmsNumber1),
+                    Sms2 = (string.IsNullOrEmpty(cs.SmsNumber2) ? "" : cs.SmsNumber2)                    
                 }).FirstOrDefaultAsync();
 
             if (result == null)

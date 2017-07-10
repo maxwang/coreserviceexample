@@ -46,9 +46,9 @@ namespace SIMAPIServerSite.Controllers
                     Sms1 = result.Sms1,
                     Sms2 = result.Sms2,
                     Ethernet = result.Ethernet,
-                    Gateway = result.Gateway,
-                    Internet1 = result.Internet1,
-                    Internet2 = result.Internet2
+                    Gateway = result.Gateway
+                    //Internet1 = result.Internet1,
+                    //Internet2 = result.Internet2
                 });
         }
         
